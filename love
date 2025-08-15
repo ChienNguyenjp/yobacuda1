@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -102,7 +103,7 @@
 
 <footer id="copyrightFooter">
   © 2025 Bản quyền thuộc về 
-    Nguyễn Minh Chiến
+    Nguyễn Như Diễm
   </a>
 </footer>
 
@@ -124,11 +125,11 @@
 
   const isMobile = window.innerWidth <= 768;
   const isSmallMobile = window.innerWidth <= 480;
-  const maxParticles = isSmallMobile ? 150 : isMobile ? 200 : 300;
-  const particleInterval = isMobile ? 100 : 120;
-  const starCount = isSmallMobile ? 250 : isMobile ? 350 : 500;
+  const maxParticles = isSmallMobile ? 50 : isMobile ? 70 : 100;
+  const particleInterval = isMobile ? 400 : 400;
+  const starCount = isSmallMobile ? 250 : isMobile ? 200 : 200;
 
-  let particleSpeedMultiplier = 1.3;
+  let particleSpeedMultiplier = 2;
 
   // Demo galaxy data:
   const galaxyData = {
@@ -140,14 +141,16 @@
       heart: '#ff4466',
     },
     messages: [
-      'Hoàng Ngọc Mai ❤️ ','Hoàng Ngọc Mai ❤️ ','Hoàng Ngọc Mai ❤️ ', 'I Love You ❤️', 'I Love You ❤️', 'I Love You ❤️', 'I Love You ❤️', '15/10/1999', 'Cảm Ơn vì đã bên Anh','15/10/1999','15/10/1999', 'Nguyễn Minh Chiến','07/11/1996','Nguyễn Minh Chiến','Yêu Bà Xã', 'Anh Yêu Em','Yêu Bà Xã','Anh Yêu Em','Anh Yêu Em', 'Yêu Bà Xã', '❤️', '💖'
+      'Nguyễn Như Diễm ❤️ ','Nguyễn Như Diễm ❤️ ','Nguyễn Như Diễm ❤️ ', 'I Love You ❤️', 'Nguyễn Như Diễm ❤️', 'Nguyễn Như Diễm ❤️', 'Nguyễn Như Diễm ❤️', 'I Love You ❤️ ','Nguyễn Như Diễm ❤️ ', '💖'
       
     ],
     icons: [],
     images: [
-      'https://i.ibb.co/GQgjMGYN/unnamed-1.jpg',
-      'https://i.ibb.co/DHQPqZJD/unnamed-2.jpg',
-      'https://i.ibb.co/zTK7MYQL/unnamed.jpg'
+      '',
+      'https://i.ibb.co/hFYJhprb/1.jpg',
+      'https://i.ibb.co/fVhq2W0D/3.jpg',
+      'https://i.ibb.co/CsBTwcvT/4.jpg',
+      'https://i.ibb.co/hxGcPsWQ/2.jpg'
     ],
     song: 'https://dn720304.ca.archive.org/0/items/anh-nang-cua-anh-duc-phuc-download-lossless-500kbps-320kbps-anh-nang-cua-anh-duc-phuc/%C3%81nh%20N%E1%BA%AFng%20C%E1%BB%A7a%20Anh%20-%20%C4%90%E1%BB%A9c%20Ph%C3%BAc%20~%20Download%20Lossless%2C%20500kbps%2C%20320kbps%20~%20Anh%20Nang%20Cua%20Anh%20-%20Duc%20Phuc.mp3'
   };
@@ -272,7 +275,7 @@
     img.src = galaxyData.images[Math.floor(Math.random() * galaxyData.images.length)];
     img.className = 'text-particle image-particle';
 
-    img.style.width = (Math.random() * 60 + 80) + 'px'; // 60-100 px width
+    img.style.width = (Math.random() * 40 + 90) + 'px'; // 60-100 px width
     img.style.height = 'auto';
 
     img.style.left = (Math.random() * 100) + '%';
@@ -422,7 +425,7 @@
       setInterval(() => {
         // Randomly create particles, preferring text & icons, sometimes images
         const rand = Math.random();
-        if (rand < 0.75) createTextParticle();
+        if (rand < 0.6) createTextParticle();
         else createImageParticle();
 
         // Clean old particles if too many (handled inside create functions)
